@@ -3,6 +3,7 @@ import { ls } from '../commands/ls.js';
 import { up } from '../commands/up.js';
 import { cat } from '../commands/cat.js';
 import { add } from '../commands/add.js';
+import { rn } from '../commands/rn.js';
 
 export const handleCommand = (input) => {
     const [command, ...args] = input.split(' ');
@@ -21,7 +22,10 @@ export const handleCommand = (input) => {
             break;
         case 'add':
             add(args);
-            break;        
+            break;
+        case 'rn':
+            rn(args);
+            break;            
         default:
             console.log('Invalid input')        
     }
