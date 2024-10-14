@@ -7,6 +7,8 @@ import { rn } from '../commands/rn.js';
 import { cp } from '../commands/cp.js';
 import { mv } from '../commands/mv.js';
 import { rm } from '../commands/rm.js';
+import { getSysInfo } from '../osCommands/getSysInfo.js';
+import { hash } from '../commands/hash.js';
 
 export const handleCommand = (input) => {
     const [command, ...args] = input.split(' ');
@@ -37,7 +39,13 @@ export const handleCommand = (input) => {
             break;
         case 'rm':
             rm(args);
-            break;                    
+            break;
+        case 'os':
+            getSysInfo(args);
+            break;
+        case 'hash':
+            hash(args);
+            break;
         default:
             console.log('Invalid input')        
     }
