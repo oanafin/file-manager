@@ -9,6 +9,8 @@ import { mv } from '../commands/mv.js';
 import { rm } from '../commands/rm.js';
 import { getSysInfo } from '../osCommands/getSysInfo.js';
 import { hash } from '../commands/hash.js';
+import { compress } from '../commands/compress.js';
+import { decompress } from '../commands/decompress.js';
 
 export const handleCommand = (input) => {
     const [command, ...args] = input.split(' ');
@@ -46,6 +48,12 @@ export const handleCommand = (input) => {
         case 'hash':
             hash(args);
             break;
+        case 'compress':
+            compress(args);
+            break;
+        case 'decompress':
+            decompress(args);
+            break;    
         default:
             console.log('Invalid input')        
     }
