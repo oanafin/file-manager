@@ -15,8 +15,10 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+const rlClose = () => rl.close();
+
 rl.on('line', (input) => {
-    handleCommand(input);
+    handleCommand(input, rlClose());
 });
 
 rl.on('close', () => {
