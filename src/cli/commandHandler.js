@@ -5,6 +5,7 @@ import { cat } from '../commands/cat.js';
 import { add } from '../commands/add.js';
 import { rn } from '../commands/rn.js';
 import { cp } from '../commands/cp.js';
+import { mv } from '../commands/mv.js';
 
 export const handleCommand = (input) => {
     const [command, ...args] = input.split(' ');
@@ -29,7 +30,10 @@ export const handleCommand = (input) => {
             break;    
         case 'cp':
             cp(args);
-            break;            
+            break;
+        case 'mv':
+            mv(args);
+            break;                
         default:
             console.log('Invalid input')        
     }
